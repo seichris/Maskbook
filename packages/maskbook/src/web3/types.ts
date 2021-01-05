@@ -1,5 +1,9 @@
 import type createMetaMaskProvider from 'metamask-extension-provider'
 
+export enum GasPriceServerType {
+    GasNow = 'GasNow'
+}
+
 export enum ProviderType {
     Maskbook = 'Maskbook',
     MetaMask = 'MetaMask',
