@@ -1,7 +1,8 @@
 import type createMetaMaskProvider from 'metamask-extension-provider'
 
 export enum GasPriceServerType {
-    GasNow = 'GasNow'
+    GasNow = 'GasNow',
+    GasStation = 'GasStation',
 }
 
 export enum ProviderType {
