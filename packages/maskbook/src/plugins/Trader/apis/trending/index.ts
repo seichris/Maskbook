@@ -382,6 +382,6 @@ export async function getPriceStats(
     return Object.entries(stats.data).map(([date, x]) => [date, x[currency.name.toUpperCase()][0]])
 }
 
-export async function getPrice(coinId: string) {
+export async function getPrice(coinId: number) {
     return await coinMarketCapAPI.getPrice(coinId)
 }
