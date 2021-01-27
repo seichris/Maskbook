@@ -49,53 +49,51 @@ export function Navigation({}: NavigationProps) {
 
     const routerMatch = useRouteMatch(Routes.Wallets)
     return (
-        <>
-            <List>
-                {!matches && <Toolbar />}
-                <ListItemLink to={Routes.Personas}>
-                    <ListItemIcon>
-                        <Masks />
-                    </ListItemIcon>
-                    <ListItemText primary="Personas" />
-                </ListItemLink>
-                <ListItem
-                    button
-                    selected={!!routerMatch}
-                    classes={{ selected: classes.selected }}
-                    onClick={() => setExpanded((e) => !e)}>
-                    <ListItemIcon>
-                        <AccountBalanceWallet />
-                    </ListItemIcon>
-                    <ListItemText>Wallets</ListItemText>
-                    {expanded ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={expanded}>
-                    <List disablePadding>
-                        <ListItemLink nested to={Routes.WalletsTransfer}>
-                            <ListItemText primary="Transfer" />
-                        </ListItemLink>
-                        <ListItemLink nested to={Routes.WalletsSwap}>
-                            <ListItemText primary="Swap" />
-                        </ListItemLink>
-                        <ListItemLink nested to={Routes.WalletsRedPacket}>
-                            <ListItemText primary="Red packet" />
-                        </ListItemLink>
-                        <ListItemLink nested to={Routes.WalletsSell}>
-                            <ListItemText primary="Sell" />
-                        </ListItemLink>
-                        <ListItemLink nested to={Routes.WalletsHistory}>
-                            <ListItemText primary="History" />
-                        </ListItemLink>
-                    </List>
-                </Collapse>
-                <ListItemLink to={Routes.Settings}>
-                    <ListItemIcon>
-                        <Settings />
-                    </ListItemIcon>
-                    <ListItemText primary="Settings" />
-                </ListItemLink>
-            </List>
-        </>
+        <List>
+            {!matches && <Toolbar />}
+            <ListItemLink to={Routes.Personas}>
+                <ListItemIcon>
+                    <Masks />
+                </ListItemIcon>
+                <ListItemText primary="Personas" />
+            </ListItemLink>
+            <ListItem
+                button
+                selected={!!routerMatch}
+                classes={{ selected: classes.selected }}
+                onClick={() => setExpanded((e) => !e)}>
+                <ListItemIcon>
+                    <AccountBalanceWallet />
+                </ListItemIcon>
+                <ListItemText>Wallets</ListItemText>
+                {expanded ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={expanded}>
+                <List disablePadding>
+                    <ListItemLink nested to={Routes.WalletsTransfer}>
+                        <ListItemText primary="Transfer" />
+                    </ListItemLink>
+                    <ListItemLink nested to={Routes.WalletsSwap}>
+                        <ListItemText primary="Swap" />
+                    </ListItemLink>
+                    <ListItemLink nested to={Routes.WalletsRedPacket}>
+                        <ListItemText primary="Red packet" />
+                    </ListItemLink>
+                    <ListItemLink nested to={Routes.WalletsSell}>
+                        <ListItemText primary="Sell" />
+                    </ListItemLink>
+                    <ListItemLink nested to={Routes.WalletsHistory}>
+                        <ListItemText primary="History" />
+                    </ListItemLink>
+                </List>
+            </Collapse>
+            <ListItemLink to={Routes.Settings}>
+                <ListItemIcon>
+                    <Settings />
+                </ListItemIcon>
+                <ListItemText primary="Settings" />
+            </ListItemLink>
+        </List>
     )
 }
 

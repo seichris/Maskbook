@@ -38,8 +38,6 @@ const useStyles = makeStyles((theme) => ({
     },
     temporaryDrawer: {
         width: 232,
-        // Or theme.xxx.width?
-        // like width: theme.layout.navigation.width,
     },
     temporaryPaper: {
         width: 232,
@@ -131,7 +129,6 @@ export function DashboardFrame(props: DashboardFrameProps) {
                         BackdropProps={{ invisible: true }}
                         PaperProps={{ elevation: 0 }}
                         variant="temporary"
-                        // className={classes.temporaryDrawer}
                         classes={{ paper: classes.temporaryPaper }}>
                         <Navigation />
                     </Drawer>
